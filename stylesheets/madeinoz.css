@@ -1,0 +1,13 @@
+header.hero-unit {
+  padding-left: 32%;
+  background-image: url('../images/australia.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+h1, h2 { text-shadow: 0 1px rgba(255,255,255,0.6); }
+#sites li { font-size: 16px; }
+
+@media (max-width: 600px) {
+  header.hero-unit { background-image: none; }
+}
