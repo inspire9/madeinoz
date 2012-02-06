@@ -20,7 +20,7 @@
 
       <hr />
 
-      <p>Want you list your Australian site here? <a href="https://github.com/inspire9/madeinoz" target="_blank">Add a pull request</a></p>
+      <p>Want you list your Australian site here? <a href="https://github.com/inspire9/madeinoz" target="_blank">Add a pull request</a> or <a href="#" id="suggest">suggest a site</a></p>
       <p>Inspired by <a href="http://nytm.org/made/" target="_blank">Internet Made in New York City</a> via <a href="http://twitter.com/katekendall" target="_blank">Kate</a></p>
       <p><a href="http://katekendall.com/2012/02/03/attention-australian-startup-founders/" target="_blank">About this site</a></p>
     </div>
@@ -31,6 +31,7 @@
         var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
         uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/FXA6x0rjDOsGTHy52tUy4A.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+        link = document.getElementById("suggest"); link.onclick = function(){ UserVoice.showPopupWidget(); false };
       })();
 
       var _gauges = _gauges || [];
