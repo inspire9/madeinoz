@@ -4,6 +4,13 @@ header.hero-unit {
   background-repeat: no-repeat;
   background-size: 260px;
   background-position: 10% 50%;
+
+  -webkit-border-top-right-radius:	0;
+  -webkit-border-top-left-radius: 	0;
+  -moz-border-radius-topright: 		0;
+  -moz-border-radius-topleft: 		0;
+  border-top-right-radius: 			0;
+  border-top-left-radius: 			0;
 }
 
 h1, h2 { text-shadow: 0 1px rgba(255,255,255,0.6); }
