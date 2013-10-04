@@ -43,10 +43,12 @@ p {
 
 h1#logo {
   a {
+    margin: 0 auto 10px;
     display: block;
+    @include sprite-2x('logo-small');
     @include respond-to(web) {
       margin: 35px auto 0;
+      @include sprite-2x('logo');
     }
-    @include sprite-2x('logo');
   }
 }

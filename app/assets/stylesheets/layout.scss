@@ -1,8 +1,11 @@
 
 header#site_header {
-  background: $yellow;
+  @include background($yellow asset-url('aus_small.png') no-repeat 10% 0);
+  background-size: auto 100%;
   @include respond-to(web) {
     height: 180px;
+    @include background($yellow asset-url('aus_small.png') no-repeat 30% 0);
+    background-size: auto;
   }
 }
 

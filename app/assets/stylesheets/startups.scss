@@ -13,14 +13,10 @@
       background: darken(white, 2%);
     }
     &.active {
-
       .detail {
         opacity: 1;
         height: auto;
         @include transition(height .3s ease, opacity .4s ease);
-      }
-      &:hover {
-        // background: none;
       }
     }
   }
