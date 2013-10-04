@@ -1,0 +1,18 @@
+@mixin custom-font-face($font_family, $file_name, $font_weight: 'normal', $font_style: 'normal') {
+  @font-face {
+    font-family: $font_family;
+    src: asset-url($file_name + '/' + $file_name + '.eot');
+    src: asset-url($file_name + '/' + $file_name + '.eot?#iefix') format('embedded-opentype'),
+         asset-url($file_name + '/' + $file_name + '.woff') format('woff'),
+         asset-url($file_name + '/' + $file_name + '.ttf') format('truetype'),
+         asset-url($file_name + '/' + $file_name + '.svg#' + $font_family) format('svg');
+    font-weight: $font_weight;
+    font-style: $font_style;
+  }
+}
+
+@include custom-font-face('ProximaNovaRegular', 'proximanova_regular');
+@include custom-font-face('ProximaNovaLight', 'proximanova_light');
+@include custom-font-face('ProximaNovaSemiBold', 'proximanova-semibold-webfont');
+
+@include custom-font-face('Icons', 'icomoon');

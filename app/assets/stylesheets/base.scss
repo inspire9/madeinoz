@@ -1,0 +1,52 @@
+
+
+
+body {
+  font: 13px/1.3 $font_regular;
+  -webkit-font-smoothing: antialiased;
+  color: lighten(black, 48%);
+}
+
+h3 {
+  display: inline-block;
+  font: 26px/1.3 $font_light;
+  color: lighten(black, 22%);
+}
+
+h4 {
+  display: inline-block;
+  font: 21px/1.3 $font_light;
+}
+
+a {
+  color: lighten(black, 22%);
+  text-decoration: none;
+  &:hover {
+    color: $yellow;
+  }
+}
+
+p {
+  margin-bottom: .8em;
+  line-height: 1.3;
+}
+
+.btn {
+
+}
+
+.icon-btn {
+  display: inline-block;
+  font-family: $font_icons;
+  &:before { font-family: $font_icons; }
+}
+
+h1#logo {
+  a {
+    display: block;
+    @include respond-to(web) {
+      margin: 35px auto 0;
+    }
+    @include sprite-2x('logo');
+  }
+}

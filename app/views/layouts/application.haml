@@ -1,0 +1,57 @@
+!!! 5
+%html
+  %head
+    %title Made in Oz
+    %meta{ name: "viewport", content: "initial-scale=1.0, width=device-width, user-scalable=no" }
+    %meta{ name: "apple-mobile-web-app-capable", content: "yes" }
+    %meta{ name: "apple-mobile-web-app-title", content: "Made in Oz" }
+    %meta{ name: "apple-mobile-web-app-status-bar-style", content: "yellow" }
+    %meta{ "http-equiv" => "cleartype", "content" => "on" }
+    %link{ rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "/apple-touch-icon-144x144-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "/apple-touch-icon-114x114-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed", sizes: "72x72",   href: "/apple-touch-icon-72x72-precomposed.png" }
+    %link{ rel: "apple-touch-icon-precomposed",                   href: "/apple-touch-icon-precomposed.png" }
+    %meta{ name: "format-detection", content: "telephone=no" }
+    = stylesheet_link_tag :application, media: "all", "data-turbolinks-track" => true
+    = yield :stylesheets
+    = csrf_meta_tags
+  %body
+    %header#site_header
+      .inner
+        = link_to '', '#', class: 'drawer-toggle icon-btn'
+        %h1#logo= link_to "Made in Oz", root_path
+
+        %nav.nav
+          %ul
+            %li= link_to "About", '#'
+            %li= link_to "Whose Hiring?", '#'
+            %li= link_to "Join this list", '#'
+
+    #container
+      %ol.startups
+        - 20.times do
+          %li
+            .inner
+              %header
+                %span.startup_number
+                %h3 Agile Bench
+                = link_to 'Melbourne, Vic', '#', class: 'location'
+              .detail
+                = link_to '#', target: '_blank', class: 'company_logo' do
+                  = image_tag image_url('logos/tweaky.png'), alt: 'Tweaky'
+                .latest
+                  %h4 Latest Blog Posts
+                  %ul
+                    %li= link_to '4 Reasons You Need An Email Autoresponder', '#'
+                    %li= link_to '3 steps to marketing your business online with a tight budget', '#'
+                    %li= link_to 'No one cares about your band (three tips on how to make them)', '#'
+                .vcard
+                  %p Build your Dream Website! We're the #1 marketplace for website customization. Supporting WordPress, Magento, BigCommerce, Shopify etc. How can we help you?
+                  .company_links
+                    = link_to 'www.tweaky.com', '#', class: 'company_url'
+                    = link_to 'www.tweaky.com', '#', class: 'icon-btn twitter'
+                    = link_to 'www.tweaky.com', '#', class: 'icon-btn facebook'
+
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = yield :javascripts

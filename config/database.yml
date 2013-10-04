@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: madeinoz_development
+
+test: &test
+  adapter: postgresql
+  database: madeinoz_test
+
+production:
+  adapter: postgresql
+  database: madeinoz

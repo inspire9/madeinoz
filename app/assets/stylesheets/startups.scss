@@ -1,0 +1,98 @@
+
+.startups {
+  @include reset-list;
+  border-top: 1px solid darken(white, 15%);
+  li {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid darken(white, 15%);
+    cursor: pointer;
+    box-sizing: border-box;
+    &:hover {
+      background: darken(white, 2%);
+    }
+    &.active {
+
+      .detail {
+        opacity: 1;
+        height: auto;
+        @include transition(height .3s ease, opacity .4s ease);
+      }
+      &:hover {
+        // background: none;
+      }
+    }
+  }
+  header {
+    @include respond-to(web) {
+      padding-left: 200px;
+    }
+  }
+  .detail {
+    opacity: 0;
+    height: 0;
+    @include transition(none);
+    overflow: hidden;
+    @include respond-to(web) {
+      padding-left: 200px;
+    }
+  }
+  .company_logo {
+    display: none;
+    @include respond-to(web) {
+      display: block;
+      float: left;
+      margin-left: -200px;
+    }
+  }
+  .location {
+    margin-left: 10px;
+    font: 13px/1.2 $font_regular;
+    text-transform: uppercase;
+    color: $grey_light;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  p {
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .latest {
+    display: none;
+  }
+}
+
+.company_links a {
+  margin-right: 6px;
+}
+.company_url {
+  font: 16px/18px $font_regular;
+}
+
+.icon-btn.twitter, .icon-btn.facebook {
+  position: relative;
+  text-indent: -9999em;
+  width: 18px;
+  height: 18px;
+  opacity: 0.45;
+  line-height: 18px;
+  color: black;
+  &:before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '\e001';
+    font-size: 18px;
+    text-indent: 0;
+  }
+  &:hover {
+    opacity: 1;
+    color: $yellow;
+  }
+}
+.icon-btn.facebook:before {
+  content: '\f082';
+}

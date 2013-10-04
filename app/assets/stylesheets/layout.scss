@@ -1,0 +1,36 @@
+
+header#site_header {
+  background: $yellow;
+  @include respond-to(web) {
+    height: 180px;
+  }
+}
+
+.inner {
+  @include respond-to(web) {
+    margin: 0 auto;
+    width: 800px;
+  }
+}
+.nav {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  @include respond-to(web) {
+    margin-top: 30px;
+  }
+  li {
+    display: inline-block;
+    margin: 0 8px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    font: 16px/1.2 $font_bold;
+  }
+}
+
+.icon-btn.drawer-toggle {
+  content: '\f0c9';
+  font: 16px/1 $font_icons;
+}

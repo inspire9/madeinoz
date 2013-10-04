@@ -1,0 +1,112 @@
+@mixin text-replace {
+  display: block;
+  overflow: hidden;
+  text-indent: -9999em;
+  border: none;
+  width: inherit;
+  height: inherit;
+}
+
+@mixin block-list {
+  display: block;
+  margin: 0;
+  list-style: none;
+  li { display: block; }
+}
+
+@mixin link-list {
+  @include block-list;
+  li {
+    padding: 0;
+    a {
+      display: block;
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  > li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin animation($content) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-animation: #{$content};
+  }
+}
+@mixin keyframes($animation_name) {
+  @-webkit-keyframes $animation_name {
+    @content;
+  }
+  @-moz-keyframes $animation_name {
+    @content;
+  }
+  @-o-keyframes $animation_name {
+    @content;
+  }
+  @keyframes $animation_name {
+    @content;
+  }
+}
+
+@mixin text-gradient {
+  color: #333;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#535353));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin text-gradient-lips {
+  color: darken($lips, 5%);
+  background: -webkit-linear-gradient(top, darken(#d32630, 50%) 0%, #d32630 20%, $lips 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin styled-list {
+  margin-bottom: 20px;
+  li {
+    @include clear-fix;
+    padding: 10px 10px 10px 70px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid rgba($grey_light, 0.2);
+    &:first-child { border-top: 1px solid rgba($bg, 0) !important }
+  }
+}
+@mixin block-btn {
+  padding: 13px 0;
+  display: block;
+}
+
+@mixin respond-to($media) {
+  @if $media == web {
+    @media only screen and (min-width: 760px) { @content }
+  }
+  @else if $media == medium {
+    @media only screen and (min-width: 1000px) { @content }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: 1300px) { @content }
+  }
+  @else if $media == xlarge {
+    @media only screen and (min-width: 1600px) { @content }
+  }
+}
+
+
+
+@mixin sprite-2x($sprite) {
+  $sprites: sprite-map("application/*.png");
+  text-indent: -9999px;
+  @include application-sprite($sprite);
+  background-position: 0 round(nth(sprite-position($sprites, $sprite), 2) / 2);
+  height: image-height(sprite-file($sprites, $sprite)) / 2;
+  width: image-width(sprite-file($sprites, $sprite)) / 2;
+  background-size: (image-width(sprite-path($application-sprites)) / 2) auto;
+}
